@@ -1,0 +1,22 @@
+[
+    {
+        "Tourss": "AOE",
+        "ImageAdress": "https://i.imgur.com/YICkNwY.png",
+        "Hotels": [
+          {
+            "hotel": "NoName",
+            "Cost": 900,
+            "QuantityNight": 5,
+            "TypeOfRooms": "lll",
+            "Nutrition": "BB",
+            "Information": "----",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/xZfnq2I.jpg",
+                    "isMain": true
+                }
+            ]
+          }
+        ]
+      }
+]

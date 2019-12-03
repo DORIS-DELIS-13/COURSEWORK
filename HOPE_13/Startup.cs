@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using HOPE_13.Data;
 using HOPE_13.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -39,7 +40,11 @@ namespace HOPE_13
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
+            services.AddTransient<Seed>();
+            services.AddAutoMapper();
             services.AddScoped<IAuthRepository,AuthRepository>();
+            services.AddScoped<ITourRepository, TourRepository>();
+            services.AddScoped<IHotelRepository, HotelRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -54,7 +59,7 @@ namespace HOPE_13
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -75,6 +80,7 @@ namespace HOPE_13
                 });
                 app.UseHsts();
             }
+          //  seeder.SeedTours();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             // app.UseHttpsRedirection();
             app.UseAuthentication();

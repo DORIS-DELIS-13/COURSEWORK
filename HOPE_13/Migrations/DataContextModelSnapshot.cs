@@ -19,6 +19,67 @@ namespace HOPE_13.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HOPE_13.Models.Hotel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cost");
+
+                    b.Property<string>("Information");
+
+                    b.Property<string>("Nutrition");
+
+                    b.Property<int>("QuantityNight");
+
+                    b.Property<int?>("ToursId");
+
+                    b.Property<string>("TypeOfRooms");
+
+                    b.Property<string>("hotel");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ToursId");
+
+                    b.ToTable("Hotels");
+                });
+
+            modelBuilder.Entity("HOPE_13.Models.ImageHotel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("HotelId");
+
+                    b.Property<string>("ImageAdress");
+
+                    b.Property<bool>("isMain");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("ImageHotels");
+                });
+
+            modelBuilder.Entity("HOPE_13.Models.Tour", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageAdress");
+
+                    b.Property<string>("Tourss");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tours");
+                });
+
             modelBuilder.Entity("HOPE_13.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -34,6 +95,21 @@ namespace HOPE_13.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("HOPE_13.Models.Hotel", b =>
+                {
+                    b.HasOne("HOPE_13.Models.Tour", "Tours")
+                        .WithMany("Hotels")
+                        .HasForeignKey("ToursId");
+                });
+
+            modelBuilder.Entity("HOPE_13.Models.ImageHotel", b =>
+                {
+                    b.HasOne("HOPE_13.Models.Hotel", "Hotel")
+                        .WithMany("ImageHotels")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

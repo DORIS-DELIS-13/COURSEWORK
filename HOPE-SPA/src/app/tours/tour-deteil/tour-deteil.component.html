@@ -1,0 +1,9 @@
+<!-- <h1>{{tour.tourss}}</h1>
+<img class="card-img" src="{{tour.imageAdress}}"/> -->
+<div class = "container">
+  <div class="row">
+    <div *ngFor = "let hotel of hotels" class= "col-12 col-sm-8 col-md-6 col-lg-4">
+      <app-hotel-box [hotel]="hotel"></app-hotel-box>
+    </div>
+  </div>
+</div>

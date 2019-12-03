@@ -16,5 +16,11 @@ namespace HOPE_13.Data
 
    //   public DbSet<Value> myproperty { get; set; }
         public DbSet<User> Users {get;set;}
+        public DbSet<Tour> Tours {get;set;}
+        public DbSet<Hotel> Hotels {get;set;}
+
+        public DbSet<ImageHotel> ImageHotels {get;set;}
+
+
     }
 }
