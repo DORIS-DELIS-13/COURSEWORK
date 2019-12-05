@@ -17,7 +17,7 @@ namespace HOPE_13.Data
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
             if(user == null) return user;
-            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt)) return null;
+         //   if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt)) return null;
 
             return user;
         }
@@ -40,8 +40,8 @@ namespace HOPE_13.Data
            byte[] passwordHash, passwordSalt;
            CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-           user.PasswordHash = passwordHash;
-           user.PasswordSalt = passwordSalt;
+        //    user.PasswordHash = passwordHash;
+        //    user.PasswordSalt = passwordSalt;
 
            await _context.AddAsync(user);
            await _context.SaveChangesAsync();

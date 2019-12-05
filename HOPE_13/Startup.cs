@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 using AutoMapper;
 using HOPE_13.Data;
 using HOPE_13.Helpers;
+using HOPE_13.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,13 +42,19 @@ namespace HOPE_13
               services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddCors();
-            services.AddTransient<Seed>();
-            services.AddAutoMapper();
-            services.AddScoped<IAuthRepository,AuthRepository>();
-            services.AddScoped<ITourRepository, TourRepository>();
-            services.AddScoped<IHotelRepository, HotelRepository>();
+            IdentityBuilder builder = services.AddIdentityCore<User>(opt => {
+                 opt.Password.RequireDigit = false;
+                 opt.Password.RequiredLength =4;
+                 opt.Password.RequireNonAlphanumeric = false;
+                 opt.Password.RequireUppercase = false;
+            });
+
+            builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
+            builder.AddEntityFrameworkStores<DataContext>();
+            builder.AddRoleValidator<RoleValidator<Role>>();
+            builder.AddRoleManager<RoleManager<Role>>();
+            builder.AddSignInManager<SignInManager<User>>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -56,6 +66,29 @@ namespace HOPE_13
                         ValidateAudience = false
                     };
                 });
+                
+            services.AddMvc(options =>
+                {
+                    var policy = new AuthorizationPolicyBuilder()
+                        .RequireAuthenticatedUser()
+                            .Build();
+                    options.Filters.Add(new AuthorizeFilter(policy));
+                }
+            )
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                    .AddJsonOptions(opt => {
+                        opt.SerializerSettings.ReferenceLoopHandling = 
+                            Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                    });
+                    
+            services.AddCors();
+            services.AddTransient<Seed>();
+            Mapper.Reset();
+            services.AddAutoMapper();
+            services.AddScoped<IAuthRepository,AuthRepository>();
+            services.AddScoped<ITourRepository, TourRepository>();
+            services.AddScoped<IHotelRepository, HotelRepository>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,7 +111,7 @@ namespace HOPE_13
                         }
                     });
                 });
-                app.UseHsts();
+             //   app.UseHsts();
             }
           //  seeder.SeedTours();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

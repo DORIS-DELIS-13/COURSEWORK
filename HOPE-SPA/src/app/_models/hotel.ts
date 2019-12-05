@@ -7,4 +7,5 @@ export interface Hotel {
     Nutrition: string;
     Information: string;
     ImageUrl1: string;
+    ToursId: number;
 }

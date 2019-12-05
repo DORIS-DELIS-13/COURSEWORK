@@ -20,7 +20,9 @@ namespace PosterStore.Helpers
 
           CreateMap<Tour, TourForListDto>();
           CreateMap<Tour, TourForDetailedDto>();
-        //  CreateMap<ImageHotel, ImageHotelForDetailedDto>();
+          CreateMap<ImageHotel, ImageHotelForDetailedDto>();
+          CreateMap<User,UserForListDto>();   
+          CreateMap<UserForRegisterDto,User>();
 
 
       }
