@@ -67,31 +67,28 @@ namespace HOPE_13.Controllers
         return Ok(new
         {
           token = GenerateJWtToken(appUser),
-          user = userToReturn // відправляю токен в response 
+          user = userToReturn 
         });
       }
         return Unauthorized();
-      //Створюю токен, який потім відправляєм юзеру, він буде мати 2-бітну інфу про юзера(username i password)
-      //Так як токен валідований сервером без використання бд, сервер може заглянути всередину токена і отримати дані про юзера
-
+      
     }
     private string GenerateJWtToken(User user)
     {
       var claims = new[]
       {
-        new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),// NameIdentifier = id
+        new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
         new Claim(ClaimTypes.Name,user.UserName)
       };
       var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
       var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-      //створюю токен
+      
       var tokenDescriptor = new SecurityTokenDescriptor
       {
         Subject = new ClaimsIdentity(claims),
         Expires = DateTime.Now.AddDays(1),
         SigningCredentials = creds
       };
-      //handler - дозволяє створювати token основаним на tokenDescriptor
       var tokenHandler = new JwtSecurityTokenHandler();
 
       var token = tokenHandler.CreateToken(tokenDescriptor);

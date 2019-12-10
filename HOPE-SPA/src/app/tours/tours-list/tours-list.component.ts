@@ -22,4 +22,5 @@ export class ToursListComponent implements OnInit {
     });
   }
 
+
 }

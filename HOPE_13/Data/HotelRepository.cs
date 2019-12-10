@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using HOPE_13.Models;
 using Microsoft.EntityFrameworkCore;
+using HOPE_13.Data;
 
 namespace HOPE_13.Data
 {

@@ -113,7 +113,7 @@ namespace HOPE_13
                 });
              //   app.UseHsts();
             }
-          //  seeder.SeedTours();
+        //    seeder.SeedTours();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             // app.UseHttpsRedirection();
             app.UseAuthentication();

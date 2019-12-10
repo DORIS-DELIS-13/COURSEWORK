@@ -1,30 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: black;">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(216, 164, 218);">
   <div class="container">
-      <a class="navbar-brand" [routerLink]="['/home']">Tour-Store</a>
+      <a class="navbar-brand" [routerLink]="['/home']">Travel-Box</a>
 
       <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link" [routerLink]="['/tours']">Tours</a>
+          <a class="nav-link" [routerLink]="['/tours']">Тури</a>
         </li>
       </ul>
 
       <div *ngIf="loggedIn()" class="dropdown" dropdown>
         <button class="btn  dropdown-toggle text-white" dropdownToggle>
           <!-- Welcome {{authService.decodedToken?.unique_name | titlecase}} -->
-          Welcome User
+          Мій кабінет 
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *dropdownMenu>
-          <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Account</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Редагувати</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Log out</a>
+          <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Вийти</a>
         </div>
       </div>
 
       <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0"(ngSubmit)="login()">
-        <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required [(ngModel)]="model.username">
-        <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password" required [(ngModel)]="model.password">
-        <button class="btn btn-success my-2 my-sm-0" type="submit" style="border-color:#f39c12;color:white; background-color: #f39c12;">Login</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Ім'я" name="username" required [(ngModel)]="model.username">
+        <input class="form-control mr-sm-2" type="password" placeholder="Пароль" name="password" required [(ngModel)]="model.password">
+        <button class="btn btn-success my-2 my-sm-0" type="submit" style="border-color:white;color:rgb(216, 164, 218); background-color: white;">Увійти</button>
       </form>
   </div>
   

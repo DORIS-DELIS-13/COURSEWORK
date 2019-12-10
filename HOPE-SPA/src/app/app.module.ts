@@ -25,6 +25,8 @@ import { HotelService } from './_services/hotel.service';
 import { HotelBoxComponent } from './hotels/hotel-box/hotel-box.component';
 import { HotelDeteilComponent } from './hotels/hotel-deteil/hotel-deteil.component';
 import { HotelsListComponent } from './hotels/hotels-list/hotels-list.component';
+// import { TourCreateComponent } from './tours/tourCreate/tourCreate.component';
+// import { ToursCreateService } from './_services/toursCreate.service';
 
 @NgModule({
    declarations: [
@@ -38,6 +40,7 @@ import { HotelsListComponent } from './hotels/hotels-list/hotels-list.component'
       HotelsListComponent,
       HotelBoxComponent,
       HotelDeteilComponent
+      // TourCreateComponent
    ],
    imports: [
       BrowserModule,
@@ -52,6 +55,7 @@ import { HotelsListComponent } from './hotels/hotels-list/hotels-list.component'
       AlertifyService,
       TourService,
       HotelService
+      // ToursCreateService
    ],
    bootstrap: [
       AppComponent

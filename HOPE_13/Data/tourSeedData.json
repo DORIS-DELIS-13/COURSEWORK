@@ -1,18 +1,143 @@
 [
     {
-        "Tourss": "AOE",
-        "ImageAdress": "https://i.imgur.com/YICkNwY.png",
+        "Tourss": "Egypt",
+        "ImageAdress": "https://i.imgur.com/Lan3eyZ.jpg",
         "Hotels": [
           {
-            "hotel": "NoName",
-            "Cost": 900,
+            "hotel": "Fairmont Ajman 5*",
+            "Cost": 600,
             "QuantityNight": 5,
-            "TypeOfRooms": "lll",
+            "TypeOfRooms": "luxe",
             "Nutrition": "BB",
-            "Information": "----",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
             "ImageHotels": [
                 {
-                    "ImageAdress": "https://i.imgur.com/xZfnq2I.jpg",
+                    "ImageAdress": "https://i.imgur.com/qC3vQAh.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "Ajman Hotel 5*",
+            "Cost": 600,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/7Wp1CLH.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "Al Gaddah Hotel Suite 5*",
+            "Cost": 600,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/R267gCI.png",
+                    "isMain": true
+                }
+            ]
+          }
+        ]
+        
+      },
+      {
+      "Tourss": "OAE",
+        "ImageAdress": "https://i.imgur.com/wJNWTA1.jpg",
+        "Hotels": [
+          {
+            "hotel": "Atlantis - The Palm 5*",
+            "Cost": 900,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/EWtW3Ol.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "Rixos Bab Al Bahr 5*",
+            "Cost": 700,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/q8WND6X.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "Radisson Blu Resort Sharjah 5*",
+            "Cost": 1200,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/WmoV874.png",
+                    "isMain": true
+                }
+            ]
+          }
+        ]
+      },
+      {
+      "Tourss": "Thailand",
+        "ImageAdress": "https://i.imgur.com/7WQDIc8.jpg",
+        "Hotels": [
+          {
+            "hotel": "PULLMAN PATTAYA HOTEL G 5*",
+            "Cost": 1100,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/RQ5VzOQ.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "ALL SEASONS NAIHARN PHUKET 5*",
+            "Cost": 990,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/L2AYxXq.jpg",
+                    "isMain": true
+                }
+            ]
+          },
+          {
+            "hotel": "PEACH HILL HOTEL & RESORT 5*",
+            "Cost": 1300,
+            "QuantityNight": 5,
+            "TypeOfRooms": "luxe",
+            "Nutrition": "BB",
+            "Information": "Тут буде знаходитись вся потрібна інфа. Вирішила не витрачати час на її пошуки",
+            "ImageHotels": [
+                {
+                    "ImageAdress": "https://i.imgur.com/EtWOoFz.jpg",
                     "isMain": true
                 }
             ]

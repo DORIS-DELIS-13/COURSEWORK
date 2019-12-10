@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   }
   login() {
     this.accountService.login(this.model).subscribe(next => {
-      this.alertify.success('Вход прошел успешно');
+      this.alertify.message('Вітаємо, Ви знову з нами!');
      }, error => { this.alertify.error(error); }
       , () => {
        this.router.navigate(['/tours']);
@@ -28,7 +28,7 @@ export class NavComponent implements OnInit {
   }
   logout() {
     localStorage.removeItem('token');
-    this.alertify.message('Logged out');
+    this.alertify.message('Чекатимемо на Вас!');
   }
 
 

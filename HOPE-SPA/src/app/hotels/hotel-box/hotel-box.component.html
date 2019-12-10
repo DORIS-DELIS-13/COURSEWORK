@@ -1,5 +1,7 @@
 <br>
 <br>
-<p>{{hotel.hotel}}</p>
-<p>{{hotel.id}}</p>
-<a class="box-link text-warning" [routerLink]="['/hotel/', hotel.id]">Ok</a>
+<!-- <img class="card-img" src="{{hotelImages.imageAdress}}" alt="Bologna"> -->
+<!-- <img class="card-img" src="{{tour.imageAdress}}" alt="Bologna"> -->
+<p>Готель: {{hotel.hotel}}</p>
+<!-- <a class="box-link text-warning" [routerLink]="['/hotel/', hotel.id]">Ok</a> -->
+<button class="btn btn-success" [routerLink]="['/hotel/', hotel.id]" style="border-color:rgb(216, 164, 218);color:white; background-color: rgb(216, 164, 218);">Хочу</button>
