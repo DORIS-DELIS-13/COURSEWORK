@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from 'src/app/_models/hotel';
 import { HotelService } from 'src/app/_services/hotel.service';
+import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 
 @Component({
   selector: 'app-hotels-list',
@@ -9,6 +10,7 @@ import { HotelService } from 'src/app/_services/hotel.service';
 })
 export class HotelsListComponent implements OnInit {
   hotels: Hotel[];
+ pagination: Pagination;
   constructor(private hotelService: HotelService) { }
 
   ngOnInit() {
@@ -16,8 +18,9 @@ export class HotelsListComponent implements OnInit {
   }
 
   loadHotels() {
-    this.hotelService.getHotels().subscribe((hotels: Hotel[]) => {
-      this.hotels = hotels;
+    this.hotelService.getHotels(this.pagination.currentPage, this.pagination.itemsPerPage).subscribe((res: PaginatedResult<Hotel[]>) => {
+      this.hotels = res.result;
+      this.pagination = res.pagination;
     }, error => {
       console.log(error);
     });

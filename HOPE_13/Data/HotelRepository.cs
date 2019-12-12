@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using HOPE_13.Models;
 using Microsoft.EntityFrameworkCore;
 using HOPE_13.Data;
+using HOPE_13.Helpers;
 
 namespace HOPE_13.Data
 {
@@ -13,10 +14,10 @@ namespace HOPE_13.Data
         {
             _context = context;
         }
-        public async Task<IEnumerable<Hotel>> GetHotels()
+        public async Task<PagedList<Hotel>> GetHotels(HotelParams hotelParams)
         {
-            var tour = await _context.Hotels.Include(p => p.ImageHotels).ToListAsync();
-            return tour;
+            var hotels =  _context.Hotels.Include(p => p.ImageHotels);
+            return await PagedList<Hotel>.CreateAsync(hotels, hotelParams.PageNumber, hotelParams.PageSize);
         }
 
         public async Task<Hotel> GetHotel(int id)
