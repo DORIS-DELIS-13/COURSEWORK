@@ -1,6 +1,8 @@
  .box2:hover
   {    
   background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+  font-weight: 400;
+  height: 400;
   }
 
   .card-img{
@@ -9,5 +11,5 @@
 
   .bt
   {
-    align-content: center;
+    align-content: flex-end;
   }

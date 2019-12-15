@@ -1,0 +1,16 @@
+.boxh {
+    height: 350px;
+    width: 500px;
+    float: left;
+}
+
+
+.im {
+    height: 350px;
+    width: 350px;
+}
+
+/* .im:hover
+{    
+background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+} */

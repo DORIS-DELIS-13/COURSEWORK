@@ -4,10 +4,12 @@ using AutoMapper;
 using HOPE_13.Data;
 using HOPE_13.Dtos;
 using HOPE_13.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HOPE_13.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class ToursController: ControllerBase
     {

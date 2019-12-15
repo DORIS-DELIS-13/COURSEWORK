@@ -7,6 +7,8 @@ import {HotelDeteilComponent} from './hotels/hotel-deteil/hotel-deteil.component
 import { HotelDetailResolver } from './_resolvers/hotel-detail.resolver';
 import { AuthGuard } from 'src/app/_guards/auth.guard';
 import { HotelListResolver } from './_resolvers/hotel-list.resolver';
+import { TourDetailResolver } from './_resolvers/tour-detail.resolver';
+import { TourDetailComponent } from './tours/tour-detail/tour-detail.component';
 
 export const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -16,7 +18,7 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
     children: [
     {path: 'tours', component: ToursListComponent},
-    {path: 'tours/:id', component: TourDeteilComponent},
+    {path: 'tours/:id', component: TourDetailComponent, resolve: {tour: TourDetailResolver}},
     {path: 'hotel', component: HotelsListComponent, resolve: {hotel: HotelListResolver}},
     {path: 'hotel/:id', component: HotelDeteilComponent, resolve: {hotel: HotelDetailResolver}},
      ],

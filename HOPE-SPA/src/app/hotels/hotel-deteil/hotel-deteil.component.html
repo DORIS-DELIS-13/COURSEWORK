@@ -1,3 +1,5 @@
+
+<div class="boxh">
 <br>
 Готель: {{hotel.hotel}}
 <br>
@@ -10,3 +12,10 @@
 Кількість ночей: {{hotel.quantityNight}}
 <br>
 Інформація: {{hotel.information}}
+</div>
+<!-- <div class = "im">
+    <img class="card-img" src="{{hotel.imageUrl1}}" alt="Bologna">
+</div> -->
+<div *ngFor = "let hotelImages of hotel.hotelImages" class= "col-12 col-sm-8 col-md-6 col-lg-4">
+    <p>{{hotel.hotelImages[0].imageAdress}}</p>
+</div>

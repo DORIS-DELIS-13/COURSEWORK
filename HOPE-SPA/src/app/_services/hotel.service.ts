@@ -25,7 +25,7 @@ export class HotelService {
       params =  params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
     }
-    return this.http.get<Hotel[]>(this.baseUrl + 'posters', {observe: 'response', params })
+    return this.http.get<Hotel[]>(this.baseUrl + 'hotel', {observe: 'response', params })
       .pipe(
         map(response => {
           paginatedResult.result = response.body;
@@ -40,6 +40,6 @@ export class HotelService {
     return this.http.get<Hotel>(this.baseUrl + 'hotel/' + id, httpOptions);
   }
   upload(formData) {
-    return this.http.request('https://localhost:5000/api/posters', formData, {reportProgress: true, observe: 'events'});
+    return this.http.request('https://localhost:5000/api/hotels', formData, {reportProgress: true, observe: 'events'});
   }
 }

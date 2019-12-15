@@ -1,3 +1,5 @@
+import { HotelImages } from './hotelImages';
+
 export interface Hotel {
     id: number;
     hotel: string;
@@ -7,5 +9,6 @@ export interface Hotel {
     Nutrition: string;
     Information: string;
     ImageUrl1: string;
-    ToursId: number;
+    hotelImages: HotelImages[];
+    // ToursId: number;
 }

@@ -31,3 +31,4 @@ C:\COURSEWORK\HOPE_13\HOPE_13\obj\Debug\netcoreapp2.1\HOPE_13.RazorTargetAssembl
 C:\COURSEWORK\HOPE_13\HOPE_13\obj\Debug\netcoreapp2.1\HOPE_13.dll
 C:\COURSEWORK\HOPE_13\HOPE_13\obj\Debug\netcoreapp2.1\HOPE_13.pdb
 C:\COURSEWORK\HOPE_13\Hope_13\bin\Debug\netcoreapp2.1\Data\tourSeedData.json
+C:\COURSEWORK\HOPE_13\HOPE_13\bin\Debug\netcoreapp2.1\Data\userSeedData.json

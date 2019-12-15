@@ -9,11 +9,11 @@ import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
-  selector: 'app-tour-deteil',
-  templateUrl: './tour-deteil.component.html',
-  styleUrls: ['./tour-deteil.component.css']
+  selector: 'app-tour-detail',
+  templateUrl: './tour-detail.component.html',
+  styleUrls: ['./tour-detail.component.css']
 })
-export class TourDeteilComponent implements OnInit {
+export class TourDetailComponent implements OnInit {
  tour: Tour;
  hotels: Hotel[];
  pagination: Pagination;

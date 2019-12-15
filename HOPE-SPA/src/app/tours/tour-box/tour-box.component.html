@@ -1,5 +1,6 @@
-<div class="box2">
+<div class="box2" [routerLink]="['/tours/', tour.id]">
 <img class="card-img" src="{{tour.imageAdress}}" alt="Bologna">
-<h3>{{tour.tourss}}</h3>
-<button class="bt" [routerLink]="['/tours/', tour.id]" style="border-color:rgb(216, 164, 218);color:white; background-color: rgb(216, 164, 218);">Хочу</button>
+<h3>{{tour.tourss}}
+    <!-- <button class="bt" [routerLink]="['/tours/', tour.id]" style="border-color:rgba(216, 164, 218, 0);color:rgba(5, 4, 4, 0.911); background-color: rgba(216, 164, 218, 0); ">Хочу</button> -->
+</h3>
 </div>

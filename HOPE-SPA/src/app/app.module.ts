@@ -28,6 +28,8 @@ import { HotelsListComponent } from './hotels/hotels-list/hotels-list.component'
 import { HotelListResolver } from './_resolvers/hotel-list.resolver';
 import { HotelDetailResolver } from './_resolvers/hotel-detail.resolver';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { TourDetailResolver } from './_resolvers/tour-detail.resolver';
+import { TourDetailComponent } from './tours/tour-detail/tour-detail.component';
 
 // import { TourCreateComponent } from './tours/tourCreate/tourCreate.component';
 // import { ToursCreateService } from './_services/toursCreate.service';
@@ -43,7 +45,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
       TourDeteilComponent,
       HotelsListComponent,
       HotelBoxComponent,
-      HotelDeteilComponent
+      HotelDeteilComponent,
+      TourDetailComponent
       // TourCreateComponent
    ],
    imports: [
@@ -62,6 +65,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
       HotelService,
       HotelListResolver,
       HotelDetailResolver,
+      TourDetailResolver,
       JwtHelperService
       // ToursCreateService
    ],

@@ -66,6 +66,11 @@ namespace HOPE_13
                         ValidateAudience = false
                     };
                 });
+
+            services.AddAuthorization(options =>{
+                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("ModeratePosterRole",policy => policy.RequireRole("Admin","Moderator"));
+            });
                 
             services.AddMvc(options =>
                 {
@@ -113,7 +118,7 @@ namespace HOPE_13
                 });
              //   app.UseHsts();
             }
-        //    seeder.SeedTours();
+            //seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             // app.UseHttpsRedirection();
             app.UseAuthentication();

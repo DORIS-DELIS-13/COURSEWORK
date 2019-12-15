@@ -4,7 +4,11 @@
   <div class="row">
     <br>
     <br>
-    <p>{{tour.tourss}}</p>
+    <!-- <p>{{tour.hotel[0].cost}}</p> -->
+  </div>
+  <div *ngFor = "let hotel of tour.hotel" class= "col-12 col-sm-8 col-md-6 col-lg-4">
+    <!-- <p>{{hotel.hotel}}</p> -->
+    <app-hotel-box [hotel]="hotel"></app-hotel-box>
   </div>
 </div>
 <!-- <div class="d-flex justify-content-center">

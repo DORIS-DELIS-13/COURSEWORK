@@ -17,9 +17,13 @@ namespace PosterStore.Helpers
             .ForMember(destination => destination.ImageUrl1, opt => {
               opt.MapFrom(src => src.ImageHotels.FirstOrDefault(p => p.isMain).ImageAdress);
             });
+          
+          CreateMap<Tour, TourForDetailedDto>()
+          .ForMember(destination => destination.Hotel, opt => {
+              opt.MapFrom(src => src.Hotels.ToList());
+            });
 
           CreateMap<Tour, TourForListDto>();
-          CreateMap<Tour, TourForDetailedDto>();
           CreateMap<ImageHotel, ImageHotelForDetailedDto>();
           CreateMap<User,UserForListDto>();   
           CreateMap<UserForRegisterDto,User>();
